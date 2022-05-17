@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Listado</title>
+</head>
+<body>
+<h1>Proveedores</h1>
+<a data-th-href="@{/proveedor/nuevo}">Nuevo</a>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>RUT</th>
+			<th>Razon Social</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-th-each="proveedor : ${proveedores}">
+			<td data-th-text="${proveedores.id}"/>
+			<td data-th-text="${proveedores.rut}"/>
+			<td data-th-text="${proveedores.razonSocial}"/>
+			<td>
+				<a data-th-href="/proveedores/editar{id}(id=(${proveedores.id}))">Editar</a>
+				<a data-th-href="/proveedores/eliminar{id}((id=${proveedores.id}))">Eliminar</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>
