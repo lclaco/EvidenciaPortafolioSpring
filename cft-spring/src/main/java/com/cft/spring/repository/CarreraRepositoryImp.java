@@ -6,9 +6,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import com.cft.spring.modelo.Carrera;
 
+@Repository
 public class CarreraRepositoryImp implements CarreraRepository{
 
 private static final String TABLA = "carreras";
