@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Listado</title>
+</head>
+<body>
+<h1>Proveedores</h1>
+<a data-th-href="@{/factura/nuevo}">Nueva</a>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Fecha</th>
+			<th>Folio</th>
+			<th>Monto</th>
+			<th>Rut</th>
+			<th>Razon Social</th>
+			<th>Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-th-each="factura : ${facturas}">
+			<td data-th-text="${facturas.fecha}"/>
+			<td data-th-text="${facturas.folio}"/>
+			<td data-th-text="${factura.proveedor.rut}"/>
+			<td data-th-text="${factura.proveedor.razonSocial}"/>
+			<td>
+				<a data-th-href="/proveedores/editar{id}(id=(${proveedores.id}))">Editar</a>
+				<a data-th-href="/proveedores/eliminar{id}((id=${proveedores.id}))">Eliminar</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</body>
+</html>

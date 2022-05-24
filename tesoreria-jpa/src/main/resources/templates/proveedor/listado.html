@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Listado</title>
 </head>
 <body>
@@ -18,12 +18,12 @@
 	</thead>
 	<tbody>
 		<tr data-th-each="proveedor : ${proveedores}">
-			<td data-th-text="${proveedores.id}"/>
-			<td data-th-text="${proveedores.rut}"/>
-			<td data-th-text="${proveedores.razonSocial}"/>
+			<td data-th-text="${proveedor.id}"/>
+			<td data-th-text="${proveedor.rut}"/>
+			<td data-th-text="${proveedor.razonSocial}"/>
 			<td>
-				<a data-th-href="/proveedores/editar{id}(id=(${proveedores.id}))">Editar</a>
-				<a data-th-href="/proveedores/eliminar{id}((id=${proveedores.id}))">Eliminar</a>
+				<a data-th-href="@{/proveedor/editar/{id}(id=${proveedor.id})}">Editar</a>
+				<a data-th-href="@{/proveedor/eliminar/{id}(id=${proveedor.id})}">Eliminar</a>
 			</td>
 		</tr>
 	</tbody>

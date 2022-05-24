@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Proveedor</title>
 </head>
 <body>
@@ -10,7 +10,7 @@
 	<form data-th-action="@{/proveedor/procesar}" data-th-object="${proveedor}" method="post">
 		<input type=hidden data-th-field="*{id}"/>
 		RUT: <input type="text" data-th-field="*{rut}"> <br />
-		Razón Social: <input type="text" data-th-field="*{razonSocial}"/><br />
+		RazÃ³n Social: <input type="text" data-th-field="*{razonSocial}"/><br />
 		<button type="submit">Guardar</button>
 	</form>
 </body>

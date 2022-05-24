@@ -12,7 +12,7 @@ public class Proveedor {
 	@Id //dice que es la PK
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(nullable = false, length = 10)
+	@Column(nullable = false, length = 10, unique = true)
 	private String rut;
 	@Column(nullable = false)
 	private String razonSocial;

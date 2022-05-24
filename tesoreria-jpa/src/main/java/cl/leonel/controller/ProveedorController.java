@@ -17,7 +17,7 @@ import cl.leonel.repository.ProveedorRepository;
 import java.util.List;
 
 @Controller
-@RequestMapping
+@RequestMapping("/proveedor")
 public class ProveedorController {
 
 	@Autowired
