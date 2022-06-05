@@ -23,11 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests(authorize -> authorize.mvcMatchers("/", "/nosotros", "/contacto","/admin/instalar").permitAll()
+		http.authorizeRequests(authorize -> authorize.mvcMatchers("/", "/nosotros", "/contacto","/admin/instalar").permitAll() //vista publicas
 
-				.mvcMatchers("/admin/index", "/admin/reporte").hasAuthority("ADMIN").anyRequest().authenticated())
-				.formLogin(form -> form.loginPage("/ingreso").defaultSuccessUrl("/",true).permitAll())
-				.logout(logout -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET")));
+				.mvcMatchers("/admin/index", "/admin/reporte").hasAuthority("ADMIN").anyRequest().authenticated())//vista privadas
+				.formLogin(form -> form.loginPage("/ingreso").defaultSuccessUrl("/",true).permitAll())				//formulario
+				.logout(logout -> logout.logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET")));	//salida
 	}
 
 	@Override
